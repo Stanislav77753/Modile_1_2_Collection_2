@@ -18,15 +18,19 @@ public class MyCollectionFixSize<T> implements Iterable {
     }
 
     public void add(T element){
-        if(size == capacity){
-            T[] tempArray = (T[])new Object[capacity];
-            System.arraycopy(array, 1, array, 0, size - 1);
-            array[size - 1] = element;
+        if(element.equals(null)){
         }
         else{
-            array[size] = element;
-            size++;
+            if(size == capacity){
+                System.arraycopy(array, 1, array, 0, size - 1);
+                array[size - 1] = element;
+            }
+            else{
+                array[size] = element;
+                size++;
+            }
         }
+
     }
 
     @Override
