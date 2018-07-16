@@ -1,3 +1,5 @@
+import myExceptions.MyNullPointerException;
+
 import java.util.Iterator;
 
 public class MyCollectionFixSize<T> implements Iterable {
@@ -18,7 +20,12 @@ public class MyCollectionFixSize<T> implements Iterable {
     }
 
     public void add(T element){
-        if(element.equals(null)){
+        if(element == null){
+            try {
+                throw new MyNullPointerException("null is not allowed !!!");
+            } catch (MyNullPointerException e) {
+                System.out.println(e.getMessage());
+            }
         }
         else{
             if(size == capacity){

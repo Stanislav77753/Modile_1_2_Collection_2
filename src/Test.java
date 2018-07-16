@@ -7,6 +7,7 @@ public class Test {
         for(Object s : myCollectionFixSize){
             System.out.print(s + " ");
         }
+        System.out.println();
         myCollectionFixSize.add(null);
         System.out.println();
         for(Object s : myCollectionFixSize){
